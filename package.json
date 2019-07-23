@@ -1,0 +1,35 @@
+{
+  "name": "billable-hours",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lekky71/billable-hours.git"
+  },
+  "author": "hashcode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lekky71/billable-hours/issues"
+  },
+  "homepage": "https://github.com/Lekky71/billable-hours#readme",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "restify": "^8.2.0",
+    "restify-plugins": "^1.6.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.2.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "mocha": "^3.5.3"
+  }
+}
