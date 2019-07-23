@@ -17,6 +17,7 @@
   "homepage": "https://github.com/Lekky71/billable-hours#readme",
   "dependencies": {
     "dotenv": "^7.0.0",
+    "excel4node": "^1.7.2",
     "restify": "^8.2.0",
     "restify-plugins": "^1.6.0",
     "winston": "^3.2.1"

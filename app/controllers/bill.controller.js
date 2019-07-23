@@ -4,15 +4,15 @@ const HttpStatus = require('../constants/httpStatus');
 class BillController {
   constructor(logger, service) {
     this.logger = logger;
-    this.emailService = service;
+    this.billService = service;
   }
 
   static validateFile(filename) {
     return filename.endsWith('.csv');
   }
 
-  receiveFile(req, res, next) {
-
+  receiveFile(req, res) {
+    this.logger.info('file');
     const {timetable_file} = req.files;
 
     if (!timetable_file) {
@@ -21,13 +21,13 @@ class BillController {
     if (!BillController.validateFile(timetable_file.path)) {
       return Response.failure(res, {message: 'file is not a csv file'}, HttpStatus.BAD_REQUEST);
     }
-    //todo handle with service
-    this.emailService.handleEmailSub({email})
-      .then(savedEmailSub => {
-        if (savedEmailSub.error === 'already subscribed') {
-          return Response.failure(res, {message: savedEmailSub}, HttpStatus.BAD_REQUEST);
+
+    this.billService.handleFileData(timetable_file)
+      .then(result => {
+        if (!result) {
+          return Response.failure(res, {message: result}, HttpStatus.BAD_REQUEST);
         }
-        return Response.success(res, {message: savedEmailSub}, HttpStatus.ACCEPTED);
+        return Response.success(res, {message: result}, HttpStatus.ACCEPTED);
       })
       .catch(err => {
         return Response.failure(err, {message: "An error occurred, please try again later"}, HttpStatus.INTERNAL_SERVER_ERROR);

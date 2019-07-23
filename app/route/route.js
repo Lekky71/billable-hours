@@ -4,7 +4,7 @@
 const config = require('../config/settings');
 
 const routes = function routes(server, serviceLocator) {
-  const emailController = serviceLocator.get('billController');
+  const billController = serviceLocator.get('billController');
 
   const uploadEndpoint = '/upload';
 
@@ -18,7 +18,7 @@ const routes = function routes(server, serviceLocator) {
     path: uploadEndpoint,
     name: 'Generate bill for clients',
     version: '1.0.0'
-  }, (req, res, next) => emailController.receiveFile(req, res, next));
+  }, (req, res) => billController.receiveFile(req, res));
 
 };
 
