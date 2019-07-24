@@ -22,7 +22,7 @@ server.pre(restify.pre.sanitizePath());
 server.use(plugins.acceptParser(server.acceptable));
 server.use(plugins.queryParser());
 server.use(plugins.bodyParser());
-server.use(plugins.multipartBodyParser());  // Enabling multipart
+// server.use(plugins.multipartBodyParser());  // Enabling multipart
 
 // setup Routing and Error Event Handling
 routes(server, serviceLocator);

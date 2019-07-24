@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node app/index.js"
+    "start": "nodemon app/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/Lekky71/billable-hours#readme",
   "dependencies": {
+    "adm-zip": "^0.4.13",
     "dotenv": "^7.0.0",
     "excel4node": "^1.7.2",
     "restify": "^8.2.0",

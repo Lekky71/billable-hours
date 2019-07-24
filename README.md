@@ -39,7 +39,7 @@ billable-hours/
 │   ├── service
 │   │   └── bill.service.js
 │   └── tests
-│       └── triangle.test.js
+│       └── bill.test.js
 ├── package.json
 └── sample.env
 
