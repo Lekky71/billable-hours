@@ -63,7 +63,7 @@ describe('Billable Hours Suite', () => {
 
   });
 
-  it('should return zip file with status 200', (done) => {
+  it('should return zip file with status 202', (done) => {
     chai.request(app)
       .post('/upload')
       .type('form')
@@ -76,7 +76,11 @@ describe('Billable Hours Suite', () => {
         expect(res)
           .to
           .have
-          .status(200);
+          .status(202);
+        expect(res.body)
+          .to
+          .have
+          .property('message');
         done();
       });
 
