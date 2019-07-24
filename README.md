@@ -1,6 +1,8 @@
 # billable-hours
- <br/>
-A a web application that accepts a timesheet (in csv format) as input and automatically generates invoices for each company
+[![Build Status](https://travis-ci.org/Lekky71/billable-hours.svg?branch=master)](https://travis-ci.org/Lekky71/billable-hours)
+ 
+<br/>
+A web application that accepts a timesheet (in csv format) as input and automatically generates invoices for each company
 <br/>
 <br/>
 The API returns a file url, the file is a zip file that contains all the excel sheet invoices for all companies.<br/>
@@ -11,6 +13,7 @@ The frontend: the csv file is uploaded and the zip file is downloaded.<br/>
 
 ##CI/CD
 Travis CI is used, build status for branch master can be found above. 
+Hosted on Heroku: https://billable-hours.herokuapp.com
 
 To start api  
  <br/>
