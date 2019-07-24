@@ -32,14 +32,9 @@ class BillController {
         if (!result) {
           return Response.failure(res, {message: result}, HttpStatus.BAD_REQUEST);
         }
-        fs.readFile(result, 'utf8', (err, file) => {
-          if (err) {
-            return Response.failure(res, {message: "An error occurred, please try again later"}, HttpStatus.INTERNAL_SERVER_ERROR);
-          }
-          // Response.success(res, {message: result}, HttpStatus.ACCEPTED);
-          res.write(file);
-          return res.end();
-        });
+        const readStream = fs.createReadStream(result);
+        readStream.pipe(res);
+
         // return Response.success(res, {message: result}, HttpStatus.ACCEPTED);
       })
       .catch(err => {
