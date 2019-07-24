@@ -27,6 +27,15 @@ server.use(plugins.bodyParser());
 // setup Routing and Error Event Handling
 routes(server, serviceLocator);
 
+server.get('/output/*', restify.plugins.serveStatic({
+  directory: __dirname.replace('app', '')
+}));
+
+server.get('/*', restify.plugins.serveStatic({
+  directory: __dirname + '/public',
+  default: 'index.html'
+}));
+
 server.listen(config.port, () => {
   logger.info(`${server.name} is listening at ${server.url}`);
 });

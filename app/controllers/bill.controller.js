@@ -1,6 +1,5 @@
 const Response = require('../lib/responseManager');
 const HttpStatus = require('../constants/httpStatus');
-const fs = require('fs');
 
 class BillController {
   constructor(logger, service) {
@@ -32,10 +31,10 @@ class BillController {
         if (!result) {
           return Response.failure(res, {message: result}, HttpStatus.BAD_REQUEST);
         }
-        const readStream = fs.createReadStream(result);
-        readStream.pipe(res);
+        const paths = result.toString().split('/');
+        const fileUrl = `/output/${paths[paths.length - 1]}`;
 
-        // return Response.success(res, {message: result}, HttpStatus.ACCEPTED);
+        return Response.success(res, {message: fileUrl}, HttpStatus.ACCEPTED);
       })
       .catch(err => {
         this.logger.error(err);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Billable Hours</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+
+
+<form class="wrapper" action="/upload" method="post" id="upload-form">
+    <h2 id="header-text">Click the arrow to upload the timetable csv file</h2>
+    <div class="file-upload">
+        <input type="file" name="timetable_file" accept=".csv" required/>
+        <i class="fa fa-arrow-up"></i>
+    </div>
+    <br/>
+
+    <input id="submit-button" type="submit" class="button" title="Generate Invoices"/>
+    <button id="reload-button" class="button" style="display: none">Go Back</button>
+
+    <h4 id="message-text">Click the arrow to upload the timetable csv file</h4>
+
+</form>
+
+</body>
+</html>
