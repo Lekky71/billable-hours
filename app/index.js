@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 const restify = require('restify');
-const plugins = require('restify-plugins');
+const plugins = restify.plugins;
 
 const config = require('../app/config/settings');
 const routes = require('../app/route/route');

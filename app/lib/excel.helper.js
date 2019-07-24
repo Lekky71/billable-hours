@@ -101,15 +101,12 @@ class ExcelHelper {
     if (files.length === 0) callback();
     else {
       let f = files.pop();
-      this.logger.info("create zip file");
       return fs.unlink(f, (err) => {
         if (err) {
-          console.log(f + 'error, not deleted.');
           this.logger.info(err);
           callback(err);
         }
         else {
-          console.log(f + ' deleted.');
           this.deleteFiles(files, callback);
         }
       });
