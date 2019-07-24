@@ -1,12 +1,14 @@
 # billable-hours
  <br/>
-A mini project.
+A a web application that accepts a timesheet (in csv format) as input and automatically generates invoices for each company
+
 
 To start api  
  <br/>
- `npm install`
-`npm run api`  
+ `npm install` 
  <br/>
+ <br/>
+`npm start`  
  <br/>
  Testing
   <br/>
@@ -15,7 +17,7 @@ To start api
   <br/>
  `npm run test`    
  <br/>
- Full API Documentation is available on Postman via this [link](https://).
+ Full API Documentation is available on Postman via this [link](https://www.getpostman.com/collections/b37852ab8933dcb2420f).
 
 ## Codebase Structure
 <pre>
